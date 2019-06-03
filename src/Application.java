@@ -44,7 +44,7 @@ public class Application {
                 connection.moveRobotTo(toX, toY);
                 getConnection = true;
             } catch (RobotConnectionException connectException) {
-                if (i == 2) {
+                if (i == 2 && !getConnection) {
                     throw new RobotConnectionException("can't connect to the robot");
                 }
             } catch (Throwable ex) {
