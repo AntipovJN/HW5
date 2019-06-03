@@ -35,7 +35,7 @@ public class Application {
 
     }
 
-    public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
+   public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
         boolean getConnection = false;
         RobotConnection connection = null;
         for (int i = 0; i < 3 && !getConnection; i++) {
@@ -47,8 +47,6 @@ public class Application {
                 if (i == 2 && !getConnection) {
                     throw new RobotConnectionException("can't connect to the robot");
                 }
-            } catch (Throwable ex) {
-                return;
             } finally {
                 try {
                     connection.close();
